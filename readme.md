@@ -1,45 +1,45 @@
-# ??? homelab-infra
+# ğŸ–¥ï¸ homelab-infra
 
-Repositório de infraestrutura do meu homelab pessoal, com monitoramento completo de servidor utilizando ferramentas open source da stack observabilidade.
+RepositÃ³rio de infraestrutura do meu homelab pessoal, com monitoramento completo de servidor utilizando ferramentas open source da stack observabilidade.
 
 ---
 
-## ?? Dashboard
+## ğŸ“Š Dashboard
 
 ![Grafana Dashboard](./assets/dashboard.png)
 
-> Dashboard com métricas em tempo real: CPU, memória, disco, rede e uptime.
+> Dashboard com mÃ©tricas em tempo real: CPU, memÃ³ria, disco, rede e uptime.
 
 ---
 
-## ??? Stack
+## ğŸ› ï¸ Stack
 
-| Ferramenta | Função |
+| Ferramenta | FunÃ§Ã£o |
 |---|---|
-| [Grafana](https://grafana.com/) | Visualização de métricas e dashboards |
-| [Prometheus](https://prometheus.io/) | Coleta e armazenamento de métricas |
-| [Node Exporter](https://github.com/prometheus/node_exporter) | Exportação de métricas do sistema operacional |
+| [Grafana](https://grafana.com/) | VisualizaÃ§Ã£o de mÃ©tricas e dashboards |
+| [Prometheus](https://prometheus.io/) | Coleta e armazenamento de mÃ©tricas |
+| [Node Exporter](https://github.com/prometheus/node_exporter) | ExportaÃ§Ã£o de mÃ©tricas do sistema operacional |
 
 **Sistema operacional:** Ubuntu 24.04 LTS  
-**Instalação:** Serviços nativos via `systemd` (sem Docker)
+**InstalaÃ§Ã£o:** ServiÃ§os nativos via `systemd` (sem Docker)
 
 ---
 
-## ?? Estrutura
+## ğŸ“ Estrutura
 
 ```
 homelab-infra/
 +-- grafana/
-¦   +-- dashboards/
-¦       +-- node-exporter-full.json   # Dashboard exportado do Grafana
+Â¦   +-- dashboards/
+Â¦       +-- node-exporter-full.json   # Dashboard exportado do Grafana
 +-- assets/
-¦   +-- dashboard.png                 # Print do dashboard
+Â¦   +-- dashboard.png                 # Print do dashboard
 +-- README.md
 ```
 
 ---
 
-## ?? Como reproduzir
+## ğŸš€ Como reproduzir
 
 ### 1. Node Exporter
 
@@ -50,7 +50,7 @@ sudo cp node_exporter-1.8.2.linux-amd64/node_exporter /usr/local/bin/
 sudo chmod +x /usr/local/bin/node_exporter
 ```
 
-Crie o serviço em `/etc/systemd/system/node_exporter.service`:
+Crie o serviÃ§o em `/etc/systemd/system/node_exporter.service`:
 
 ```ini
 [Unit]
@@ -89,7 +89,7 @@ scrape_configs:
       - targets: ['localhost:9100']
 ```
 
-Crie o serviço em `/etc/systemd/system/prometheus.service`:
+Crie o serviÃ§o em `/etc/systemd/system/prometheus.service`:
 
 ```ini
 [Unit]
@@ -121,8 +121,8 @@ Acesse `http://localhost:3000`, adicione o Prometheus como datasource e importe 
 
 ---
 
-## ?? Sobre
+## ğŸ“Œ Sobre
 
-Projeto desenvolvido como parte do meu homelab para praticar administração de sistemas Linux, monitoramento de infraestrutura e cultura DevOps/SRE.
+Projeto desenvolvido como parte do meu homelab para praticar administraÃ§Ã£o de sistemas Linux, monitoramento de infraestrutura e cultura DevOps/SRE.
 
-**Áreas de interesse:** Sysadmin · Linux · Infraestrutura · Observabilidade
+**Ãreas de interesse:** Sysadmin Â· Linux Â· Infraestrutura Â· Observabilidade
